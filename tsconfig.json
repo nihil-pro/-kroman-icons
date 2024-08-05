@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "lib": ["ES2022", "DOM"],
+    "target": "ES2022",
+    "declaration": true,
+    "sourceMap": false,
+    "strict": true,
+    "jsx": "react-jsx",
+    "outDir": "./lib",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}
