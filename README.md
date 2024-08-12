@@ -7,3 +7,5 @@ Can be used with `react` or `preact/compat`
 ```
 npm install kricons
 ```
+
+[Icons list](https://pictogrammers.com/library/mdi/)

@@ -7,16 +7,17 @@ fs.readdir(src, (err, files) => {
   if (!fs.existsSync(output)){
     fs.mkdirSync(output);
   }
-  const indexStream = fs.createWriteStream(`${output}/index.tsx`)
+  const indexStream = fs.createWriteStream(`${output}/index.ts`)
   indexStream.once('open', () => {
 
     files.forEach((file, i) => {
+      if (file === 'alpha-d.svg') { return }
       const functionName = file.replace('.svg', '').split('-')
         .map(entry => `${entry[0].toUpperCase()}${entry.slice(1)}`)
 
       const svg = fs.readFileSync(src + file, { encoding: 'utf8' })
         .replace(/id="(.*?)"/g, '')
-        .replace(/(viewBox="(.*?)")/g, '$1' + ' fill="currentColor" {...props}')
+        .replace(/(viewBox="(.*?)")/g, '$1' + ' width="24" height="24" fill="currentColor" {...props}')
       const icon = `import type { SVGProps } from 'react'
 export function ${functionName.join('')}(props: SVGProps<SVGSVGElement>) {
   return (

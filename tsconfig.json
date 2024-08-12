@@ -8,7 +8,7 @@
     "strict": true,
     "jsx": "react-jsx",
     "outDir": "./lib",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true
   }
