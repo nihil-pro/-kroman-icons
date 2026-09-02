@@ -18,8 +18,8 @@ fs.readdir(src, (err, files) => {
       const svg = fs.readFileSync(src + file, { encoding: 'utf8' })
         .replace(/id="(.*?)"/g, '')
         .replace(/(viewBox="(.*?)")/g, '$1' + ' width="24" height="24" fill="currentColor" {...props}')
-      const icon = `import type { SVGProps } from 'react'
-export function ${functionName.join('')}(props: SVGProps<SVGSVGElement>) {
+      const icon = `import type { ReactElement, SVGProps } from 'react'
+export function ${functionName.join('')}(props: SVGProps<SVGSVGElement>): ReactElement {
   return (
     ${svg}
   )

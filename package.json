@@ -4,8 +4,22 @@
   "type": "module",
   "private": false,
   "description": "Material Design Icons without theme",
+  "main": "./lib/index.js",
   "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./*": {
+      "types": "./lib/*.d.ts",
+      "default": "./lib/*.js"
+    }
+  },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc && node fix-exports.js"
   },
@@ -21,7 +35,7 @@
     "react": "*"
   },
   "devDependencies": {
-    "@types/react": "17.0.2",
+    "@types/react": "^19.0.0",
     "typescript": "4.9.5"
   }
 }
